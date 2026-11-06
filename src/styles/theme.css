@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+body {
+    background-color: #160f0a;
+    background-image:
+        radial-gradient(circle at 50% 35%, rgba(66, 38, 19, 0.45) 0%, rgba(16, 10, 6, 0.96) 80%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 2px, transparent 2px, transparent 10px);
+    color: #fef3c7;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+.font-rustic { font-family: 'Cinzel', serif; }
+.font-mono-num { font-family: 'JetBrains Mono', monospace; }
+
+.wood-panel {
+    background: linear-gradient(145deg, #2d1b10 0%, #1c1009 100%);
+    border: 2px solid #5c3a21;
+    box-shadow: inset 0 1px 0 rgba(255, 215, 150, 0.15), 0 8px 20px rgba(0,0,0,0.6);
+}
+.wood-rim {
+    background: radial-gradient(circle, #3e2413 0%, #241309 100%);
+    border: 12px solid #3a2010;
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,0.65),
+        0 0 0 3px #78492a,
+        0 15px 40px rgba(0,0,0,0.75);
+}
+.felt-surface { background: radial-gradient(circle at center, #1b5e3a 0%, #14492c 75%, #0e351f 100%); }
+.lupus-night-surface { background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 75%, #020617 100%); }
+.lupus-day-surface { background: radial-gradient(circle at center, #78350f 0%, #451a03 75%, #1c0a00 100%); }
+.nap-card-bg { background: linear-gradient(160deg, #fffbeb 0%, #fef3c7 65%, #fde68a 100%); }
+.card-back-rustic {
+    background-color: #7f1d1d;
+    background-image:
+        radial-gradient(#fbbf24 1.2px, transparent 1.2px),
+        radial-gradient(#fbbf24 1.2px, #7f1d1d 1.2px);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+}
+
+#error-box {
+    display: none;
+    background: #ef4444;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 9999;
+}
+
+@keyframes winPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+.winner-anim { animation: winPulse 0.9s ease-out infinite; }
+
+@keyframes dealCard {
+    0% { opacity: 0; transform: translateY(-16px) scale(0.85); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.card-anim { animation: dealCard 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1c1009; }
+::-webkit-scrollbar-thumb { background: #78492a; border-radius: 9999px; }
